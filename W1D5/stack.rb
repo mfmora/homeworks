@@ -43,18 +43,14 @@ class Map
   end
 
   def assign(key, value)
-    changed = false
-    @map.each do |element|
-      next unless element[0] == key
-
-      changed = true
-      element[1] = value
-    end
-    @map << [key,value] unless changed
+    pair = @map.find { |element| element[0] == key}
+    pair ? pair[1] = value : @map << [key, value]
+    [key, value]
   end
 
   def lookup(key)
-    @map.find { |element| element[0] == key}
+    @map.each { |element| return element[1] if element[0] == key}
+    nil
   end
 
   def remove(key)
@@ -63,6 +59,11 @@ class Map
   end
 
   def show
-    @map
+    deep_dup(@map)
+  end
+
+  private
+  def deep_dup(array)
+    array.map{ |element| element.is_a?(Array) ? deep_dup(element) : element}
   end
 end
