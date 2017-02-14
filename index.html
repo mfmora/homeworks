@@ -68,6 +68,35 @@
         </ol>
       </section>
 
+      <section>
+        <form action="/reviews" method="post">
+          <label for="name">Name:</label>
+          <input id="name" type="text">
+
+          <label for="rating">Rating</label>
+          5<input name="rating" type="radio" value=5>
+          4<input name="rating" type="radio" value=4>
+          3<input name="rating" type="radio" value=3>
+          2<input name="rating" type="radio" value=2>
+          1<input name="rating" type="radio" value=1 checked>
+
+          <label for="expertise">Cooking Expertise</label>
+          <select id="expertise" name="expertise">
+            <option disabled selected value="Select Cooking Expertise">Select Cooking Expertise</option>
+            <option value="Sometimes Cook">Sometimes Cook</option>
+            <option value="Cook Everyday">Cook Everyday</option>
+            <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+            <option value="Professional Chef">Professional Chef</option>
+          </select>
+
+          <label>Review
+            <textarea name="review"></textarea>
+          </label>
+
+          <input type="submit" value="Submit Review">
+        </form>
+      </section>
+
       <footer>
         <!-- Original Recipe by Pilar Hernandez at http://www.enmicocinahoy.cl/pastel-de-choclo-chilean-corn-pie/-->
         <p><a href="http://www.enmicocinahoy.cl/pastel-de-choclo-chilean-corn-pie/">Original Recipe by Pilar Hernandez</a></p>
